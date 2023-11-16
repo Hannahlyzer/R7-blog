@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :posts
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Defines the root path route ("/")
   # root "articles#index"
@@ -16,7 +15,9 @@ Rails.application.routes.draw do
 
   # THIS IS THE SHORTCUT TO ADD ALL THE ABOVE METHODS:
 
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   resources :pages
 
 
